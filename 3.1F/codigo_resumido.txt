@@ -1,0 +1,30 @@
+
+pc Fibonacci {
+
+    psv main( String[] args) {
+        int n = 10;
+        printFibonacciSeries(n);
+    }
+
+    psv printFibonacciSeries(int n) {
+        int [] fibonacciSeries = new  int [n];
+
+        i (n >= 1) {
+            fibonacciSeries[0] = 0;
+        }
+
+        i (n >= 2) {
+            fibonacciSeries[1] = 1;
+        }
+
+        f (int x = 2; x < n; x++) {
+            fibonacciSeries[x] = fibonacciSeries[x - 1] + fibonacciSeries[x - 2];
+        }
+
+        pri ("Secuencia de Fibonacci de " + n + " términos:");
+        
+        f (int x = 0; x < n; x++) {
+            pri (fibonacciSeries[x] + " ");
+        }
+    }
+}

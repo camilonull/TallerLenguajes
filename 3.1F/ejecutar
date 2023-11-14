@@ -1,0 +1,7 @@
+rm lex.yy.c
+rm analizador
+rm Fibonacci.java
+flex analizador.l
+gcc -o analizador lex.yy.c -lfl
+./analizador < codigo_resumido.txt > Fibonacci.java
+#py codigo_completo.py
